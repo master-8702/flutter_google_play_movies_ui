@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_google_play_movies_ui/components/comment_widget.dart';
 import 'package:flutter_google_play_movies_ui/components/rating_bar_indicator.dart';
 
 void main() {
@@ -97,7 +98,7 @@ class _MyAppState extends State<MyApp> {
                                 MaterialStateProperty.all(Colors.pink),
                           ),
                           child: const Text(
-                            "Rent R29.00",
+                            "Rent \$3.99",
                             style: TextStyle(
                               fontSize: 17,
                             ),
@@ -110,7 +111,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                           onPressed: () {},
                           child: const Text(
-                            "Buy R129.00",
+                            "Buy \$13.99",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -256,7 +257,8 @@ class _MyAppState extends State<MyApp> {
                       children: const [
                         Text(
                           "Ratings and Review",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w600),
                         ),
                         Icon(Icons.arrow_forward)
                       ],
@@ -336,300 +338,59 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 8.0, right: 30, left: 10),
-                    child: Row(
-                      children: const [
-                        CircleAvatar(
-                          child: Icon(Icons.person),
-                          radius: 25,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          "Abe Kebe",
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                        Expanded(
-                          child: Align(
-                            child: Icon(Icons.more_vert),
-                            alignment: Alignment.centerRight,
-                          ),
-                        )
-                      ],
-                    ),
+                  CommentWidget(),
+                  CommentWidget(),
+                  CommentWidget(),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "See all reviews",
+                    style: TextStyle(
+                        color: myColor,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "★ ",
-                            style: TextStyle(color: myColor, fontSize: 20),
-                          ),
-                          Text(
-                            "★ ★ ★ ★  ",
-                            style: TextStyle(
-                                color: Colors.grey[400], fontSize: 20),
-                          ),
-                          Text(
-                            "November 18, 2019",
-                            style: TextStyle(fontSize: 15),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                          "Half the shots were greenscreen The Rock and Jason weren't even in the room together, "
-                          "they had no chemistry, their bickering was mostly garbage. Ryan Reynolds sucks "
-                          "#boycott Ryan Reynolds. Kevin Hart was pointless in the film. I guess they think if "
-                          "they spends enough \$\$ on random funny guys it would make their movie good. Yeah there"
-                          "were some cool driving scenes, but all of the talking parts were annoying. Probably the"
-                          "worst movie in the franchise."),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      const Text("237 people found this review helpful"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text("Did you find this helpful?"),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              side: BorderSide(width: 2, color: Colors.grey),
-                            ),
-                            onPressed: () {},
-                            child: Text('Yes'),
-                          ),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              side: BorderSide(width: 2, color: Colors.grey),
-                            ),
-                            onPressed: () {},
-                            child: Text('No'),
-                          )
-                        ],
-                      ),
-                    ],
+                  Text(
+                    "Rate this movie",
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
                   ),
-                  const SizedBox(
+                  Text(
+                    "Tell us what you think.",
+                    style: TextStyle(
+                        color: Colors.grey[600], fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "★ ★ ★ ★ ★",
+                    style: TextStyle(
+                        color: Colors.grey[400],
+                        fontWeight: FontWeight.w500,
+                        fontSize: 60),
+                  ),
+                  SizedBox(
                     height: 30,
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 8.0, right: 30, left: 10),
-                    child: Row(
-                      children: const [
-                        CircleAvatar(
-                          child: Icon(Icons.person),
-                          radius: 25,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          "Abe Kebe",
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                        Expanded(
-                          child: Align(
-                            child: Icon(Icons.more_vert),
-                            alignment: Alignment.centerRight,
-                          ),
-                        )
-                      ],
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                        "Write review",
+                        style: TextStyle(fontSize: 18),
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "★ ",
-                            style: TextStyle(color: myColor, fontSize: 20),
-                          ),
-                          Text(
-                            "★ ★ ★ ★  ",
-                            style: TextStyle(
-                                color: Colors.grey[400], fontSize: 20),
-                          ),
-                          Text(
-                            "November 18, 2019",
-                            style: TextStyle(fontSize: 15),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                          "Half the shots were greenscreen The Rock and Jason weren't even in the room together, "
-                          "they had no chemistry, their bickering was mostly garbage. Ryan Reynolds sucks "
-                          "#boycott Ryan Reynolds. Kevin Hart was pointless in the film. I guess they think if "
-                          "they spends enough \$\$ on random funny guys it would make their movie good. Yeah there"
-                          "were some cool driving scenes, but all of the talking parts were annoying. Probably the"
-                          "worst movie in the franchise."),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      const Text("237 people found this review helpful"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text("Did you find this helpful?"),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              side: BorderSide(width: 2, color: Colors.grey),
-                            ),
-                            onPressed: () {},
-                            child: Text('Yes'),
-                          ),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              side: BorderSide(width: 2, color: Colors.grey),
-                            ),
-                            onPressed: () {},
-                            child: Text('No'),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 8.0, right: 30, left: 10),
-                    child: Row(
-                      children: const [
-                        CircleAvatar(
-                          child: Icon(Icons.person),
-                          radius: 25,
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(7),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
-                          "Abe Kebe",
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.left,
-                        ),
-                        Expanded(
-                          child: Align(
-                            child: Icon(Icons.more_vert),
-                            alignment: Alignment.centerRight,
-                          ),
-                        )
-                      ],
-                    ),
+                        primary: myColor),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "★ ",
-                            style: TextStyle(color: myColor, fontSize: 20),
-                          ),
-                          Text(
-                            "★ ★ ★ ★  ",
-                            style: TextStyle(
-                                color: Colors.grey[400], fontSize: 20),
-                          ),
-                          Text(
-                            "November 18, 2019",
-                            style: TextStyle(fontSize: 15),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                          "Half the shots were greenscreen The Rock and Jason weren't even in the room together, "
-                          "they had no chemistry, their bickering was mostly garbage. Ryan Reynolds sucks "
-                          "#boycott Ryan Reynolds. Kevin Hart was pointless in the film. I guess they think if "
-                          "they spends enough \$\$ on random funny guys it would make their movie good. Yeah there"
-                          "were some cool driving scenes, but all of the talking parts were annoying. Probably the"
-                          "worst movie in the franchise."),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      const Text("237 people found this review helpful"),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text("Did you find this helpful?"),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              side: BorderSide(width: 2, color: Colors.grey),
-                            ),
-                            onPressed: () {},
-                            child: Text('Yes'),
-                          ),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              side: BorderSide(width: 2, color: Colors.grey),
-                            ),
-                            onPressed: () {},
-                            child: Text('No'),
-                          )
-                        ],
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
