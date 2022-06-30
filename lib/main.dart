@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_google_play_movies_ui/components/comment_widget.dart';
 import 'package:flutter_google_play_movies_ui/components/rating_bar_indicator.dart';
 
+import 'components/similar_movies_card.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Color myColor = Colors.pink;
+  Color googlePlayMovieColor = Colors.pink;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class _MyAppState extends State<MyApp> {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -30,7 +32,6 @@ class _MyAppState extends State<MyApp> {
                     clipBehavior: Clip.none,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(top: 5),
                         height: 250,
                         child: Image.asset(
                           "assets/images/hobbs and shaw2.jpg",
@@ -111,7 +112,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                           onPressed: () {},
                           child: const Text(
-                            "Buy \$13.99",
+                            "Buy \$14.99",
                             style: TextStyle(fontSize: 17),
                           ),
                         ),
@@ -294,7 +295,8 @@ class _MyAppState extends State<MyApp> {
                           Text(
                             "★ ★ ★ ★",
                             style: TextStyle(
-                                color: myColor, fontWeight: FontWeight.w700),
+                                color: googlePlayMovieColor,
+                                fontWeight: FontWeight.w700),
                           ),
                           SizedBox(
                             height: 5,
@@ -308,27 +310,27 @@ class _MyAppState extends State<MyApp> {
                         children: [
                           RatingBarIndicator(
                             width: 170,
-                            color: myColor,
+                            color: googlePlayMovieColor,
                             leadingNumber: 5,
                           ),
                           RatingBarIndicator(
                             width: 50,
-                            color: myColor,
+                            color: googlePlayMovieColor,
                             leadingNumber: 4,
                           ),
                           RatingBarIndicator(
                             width: 40,
-                            color: myColor,
+                            color: googlePlayMovieColor,
                             leadingNumber: 3,
                           ),
                           RatingBarIndicator(
                             width: 20,
-                            color: myColor,
+                            color: googlePlayMovieColor,
                             leadingNumber: 2,
                           ),
                           RatingBarIndicator(
                             width: 60,
-                            color: myColor,
+                            color: googlePlayMovieColor,
                             leadingNumber: 1,
                           ),
                         ],
@@ -341,18 +343,15 @@ class _MyAppState extends State<MyApp> {
                   CommentWidget(),
                   CommentWidget(),
                   CommentWidget(),
-                  SizedBox(
-                    height: 15,
-                  ),
                   Text(
                     "See all reviews",
                     style: TextStyle(
-                        color: myColor,
+                        color: googlePlayMovieColor,
                         fontWeight: FontWeight.w500,
                         fontSize: 18),
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 30,
                   ),
                   Text(
                     "Rate this movie",
@@ -378,19 +377,77 @@ class _MyAppState extends State<MyApp> {
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        primary: googlePlayMovieColor),
+                    child: const Padding(
+                      padding: EdgeInsets.all(12.0),
                       child: Text(
                         "Write review",
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7),
-                        ),
-                        primary: myColor),
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          "Similar Movies",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w600),
+                        ),
+                        Icon(Icons.arrow_forward)
+                      ],
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          SmilarMoviesCard(
+                            moviePoster: "assets/images/deadpool 2.jpg",
+                            movieTitle: "Deadpool 2",
+                            movieRRating: "R",
+                            movieGenre: "Action & Adventure",
+                            movieRating: "4.6",
+                          ),
+                          SmilarMoviesCard(
+                            moviePoster: "assets/images/fast and furious.jpg",
+                            movieTitle: "Fast & Furious 6 - Extended Edition",
+                            movieRRating: "PG-13",
+                            movieGenre: "Action & Adventure",
+                            movieRating: "4.6",
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          SmilarMoviesCard(
+                            moviePoster: "assets/images/atomic blonde.jpg",
+                            movieTitle: "Atomic Blonde",
+                            movieRRating: "R",
+                            movieGenre: "Action & Adventure",
+                            movieRating: "4.0",
+                          ),
+                          SmilarMoviesCard(
+                            moviePoster:
+                                "assets/images/the fate of the furious.jpg",
+                            movieTitle: "The Fate of the Furious",
+                            movieRRating: "R",
+                            movieGenre: "Action & Adventure",
+                            movieRating: "4.5",
+                          )
+                        ],
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
