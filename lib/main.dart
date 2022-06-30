@@ -69,12 +69,15 @@ class _MyAppState extends State<MyApp> {
                                 fontSize: 20, fontWeight: FontWeight.w700),
                           ),
                         ),
-                        const Expanded(
+                        Expanded(
                           // flex: 1,
-                          child: Icon(
-                            Icons.bookmark_add_outlined,
-                            size: 30,
-                            color: Colors.pink,
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.bookmark_add_outlined,
+                              size: 30,
+                              color: Colors.pink,
+                            ),
+                            onPressed: () {},
                           ),
                         ),
                       ],
@@ -232,20 +235,16 @@ class _MyAppState extends State<MyApp> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(18),
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        "Action & Adventure",
-                        style: TextStyle(fontSize: 16),
-                      ),
+                    child: Text(
+                      'Action & Adventure',
+                      style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                     ),
                   ),
                   const SizedBox(
@@ -255,13 +254,18 @@ class _MyAppState extends State<MyApp> {
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Ratings and Review",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w600),
                         ),
-                        Icon(Icons.arrow_forward)
+                        IconButton(
+                          icon: const Icon(
+                            Icons.arrow_forward,
+                          ),
+                          onPressed: () {},
+                        ),
                       ],
                     ),
                   ),
@@ -343,12 +347,15 @@ class _MyAppState extends State<MyApp> {
                   CommentWidget(),
                   CommentWidget(),
                   CommentWidget(),
-                  Text(
-                    "See all reviews",
-                    style: TextStyle(
-                        color: googlePlayMovieColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "See all reviews",
+                      style: TextStyle(
+                          color: googlePlayMovieColor,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18),
+                    ),
                   ),
                   SizedBox(
                     height: 30,
@@ -397,13 +404,14 @@ class _MyAppState extends State<MyApp> {
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           "Similar Movies",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w600),
                         ),
-                        Icon(Icons.arrow_forward)
+                        IconButton(
+                            onPressed: () {}, icon: Icon(Icons.arrow_forward)),
                       ],
                     ),
                   ),

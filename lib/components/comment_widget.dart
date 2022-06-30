@@ -12,15 +12,15 @@ class CommentWidget extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            children: const [
-              CircleAvatar(
+            children: [
+              const CircleAvatar(
                 child: Icon(Icons.person),
                 radius: 25,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
-              Text(
+              const Text(
                 "Abe Kebe",
                 style: TextStyle(
                   fontSize: 20,
@@ -29,13 +29,18 @@ class CommentWidget extends StatelessWidget {
               ),
               Expanded(
                 child: Align(
-                  child: Icon(Icons.more_vert),
                   alignment: Alignment.centerRight,
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.more_vert,
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Column(
