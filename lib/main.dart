@@ -126,7 +126,7 @@ class _MyAppState extends State<MyApp> {
                     thickness: 2,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         children: [
@@ -138,7 +138,7 @@ class _MyAppState extends State<MyApp> {
                                 primary: Colors.pink),
                             child: const Text(
                               "4.1 ★",
-                              style: TextStyle(fontSize: 20),
+                              style: TextStyle(fontSize: 22),
                             ),
                           ),
                           const Padding(
@@ -411,7 +411,8 @@ class _MyAppState extends State<MyApp> {
                               fontSize: 20, fontWeight: FontWeight.w600),
                         ),
                         IconButton(
-                            onPressed: () {}, icon: Icon(Icons.arrow_forward)),
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_forward)),
                       ],
                     ),
                   ),
