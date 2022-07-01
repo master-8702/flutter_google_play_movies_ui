@@ -7,7 +7,6 @@ movie page.
 made with flutter.
 
 ## Some Screenshots
-![Screenshot_1656686358](https://user-images.githubusercontent.com/55705389/176915936-f36ec2b6-6001-4c9e-87b7-326b20eccb27.png)
 
 
 <img src="https://user-images.githubusercontent.com/55705389/176914256-3a21e947-7a4a-4e1c-bc29-7ee31fc4dc9d.png" width="300" height="600" />
