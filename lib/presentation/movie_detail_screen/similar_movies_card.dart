@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 
-class SmilarMoviesCard extends StatelessWidget {
-  SmilarMoviesCard(
-      {required this.movieTitle,
-      required this.movieRRating,
-      required this.movieGenre,
-      required this.movieRating,
-      required this.moviePoster});
+import 'package:flutter_google_play_movies_ui/domain/movie.dart';
+import 'package:flutter_google_play_movies_ui/common_widgets/not_implemented.dart';
 
-  late String moviePoster;
-  late String movieTitle;
-  late String movieRRating;
-  late String movieGenre;
-  late String movieRating;
+class SimilarMoviesCard extends StatelessWidget {
+  const SimilarMoviesCard({
+    Key? key,
+    required this.movie,
+  }) : super(key: key);
+
+  final Movie movie;
 
   @override
   Widget build(BuildContext context) {
     Color? greyColor = Colors.grey[700];
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      onTap: () {},
+      onTap: () async {
+        await showNotImplementedAlertDialog(context);
+      },
       child: Row(
         children: [
           Column(
@@ -27,33 +26,33 @@ class SmilarMoviesCard extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 3.0),
                 child: Image.asset(
-                  moviePoster,
+                  movie.posterUrl!,
                   height: 150,
                   width: 80,
                 ),
               )
             ],
           ),
-          Container(
+          SizedBox(
             width: 100,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  movieTitle,
+                  movie.title,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
-                  style: TextStyle(fontWeight: FontWeight.w600),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  movieRRating,
+                  movie.rated!,
                   style: TextStyle(color: greyColor),
                 ),
                 Text(
-                  movieGenre,
+                  movie.genre.toString(),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: TextStyle(color: greyColor),
@@ -61,11 +60,11 @@ class SmilarMoviesCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "$movieRating★  ",
+                      "${movie.rating}★  ",
                       style: TextStyle(color: greyColor),
                     ),
                     Text(
-                      "\$3.99",
+                      "\$${movie.rentPrice}",
                       style: TextStyle(color: greyColor),
                     ),
                   ],

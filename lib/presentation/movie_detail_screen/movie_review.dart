@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CommentWidget extends StatelessWidget {
-  const CommentWidget({
+import 'package:flutter_google_play_movies_ui/common_widgets/not_implemented.dart';
+
+class MovieReview extends StatelessWidget {
+  const MovieReview({
     Key? key,
   }) : super(key: key);
 
@@ -14,8 +16,8 @@ class CommentWidget extends StatelessWidget {
           Row(
             children: [
               const CircleAvatar(
-                child: Icon(Icons.person),
                 radius: 25,
+                child: Icon(Icons.person),
               ),
               const SizedBox(
                 width: 20,
@@ -34,7 +36,9 @@ class CommentWidget extends StatelessWidget {
                     icon: const Icon(
                       Icons.more_vert,
                     ),
-                    onPressed: () {},
+                    onPressed: () async {
+                      await showNotImplementedAlertDialog(context);
+                    },
                   ),
                 ),
               )
@@ -48,7 +52,7 @@ class CommentWidget extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
+                  const Text(
                     "★ ",
                     style: TextStyle(color: Colors.pink, fontSize: 20),
                   ),
@@ -56,13 +60,13 @@ class CommentWidget extends StatelessWidget {
                     "★ ★ ★ ★  ",
                     style: TextStyle(color: Colors.grey[400], fontSize: 20),
                   ),
-                  Text(
+                  const Text(
                     "November 18, 2019",
                     style: TextStyle(fontSize: 15),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               const Text(
@@ -72,11 +76,11 @@ class CommentWidget extends StatelessWidget {
                   "they spends enough \$\$ on random funny guys it would make their movie good. Yeah there"
                   "were some cool driving scenes, but all of the talking parts were annoying. Probably the"
                   "worst movie in the franchise."),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               const Text("237 people found this review helpful"),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -88,20 +92,24 @@ class CommentWidget extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                       ),
-                      side: BorderSide(width: 2, color: Colors.grey),
+                      side: const BorderSide(width: 2, color: Colors.grey),
                     ),
-                    onPressed: () {},
-                    child: Text('Yes'),
+                    onPressed: () async {
+                      await showNotImplementedAlertDialog(context);
+                    },
+                    child: const Text('Yes'),
                   ),
                   OutlinedButton(
                     style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                       ),
-                      side: BorderSide(width: 2, color: Colors.grey),
+                      side: const BorderSide(width: 2, color: Colors.grey),
                     ),
-                    onPressed: () {},
-                    child: Text('No'),
+                    onPressed: () async {
+                      await showNotImplementedAlertDialog(context);
+                    },
+                    child: const Text('No'),
                   )
                 ],
               ),
