@@ -5,8 +5,8 @@ class RatingBarIndicator extends StatelessWidget {
   final Color color;
   final int width;
 
-  RatingBarIndicator(
-      {required this.color, required this.width, required this.leadingNumber});
+  const RatingBarIndicator(
+      {super.key, required this.color, required this.width, required this.leadingNumber});
 
   @override
   Widget build(BuildContext context) {
